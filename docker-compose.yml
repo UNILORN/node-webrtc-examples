@@ -1,0 +1,13 @@
+volumes:
+  none_vol:
+version: '3'
+services:
+  dev:
+    build: .
+    ports: 
+    - 3000:3000
+    volumes:
+    - .:/var/www
+    - none_vol:/var/www/node_modules
+    working_dir: /var/www
+    command: sh -c "npm i && npm start"
