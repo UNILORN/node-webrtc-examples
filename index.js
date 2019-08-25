@@ -44,7 +44,7 @@ const connectionManagers = examples.reduce((connectionManagers, example) => {
 
 const server = app.listen(3000, () => {
   const address = server.address();
-  console.log(`http://localhost:${address.port}\n`);
+  console.log(`http://0.0.0.0:${address.port}\n`);
 
   server.once('close', () => {
     connectionManagers.forEach(connectionManager => connectionManager.close());
